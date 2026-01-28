@@ -64,20 +64,20 @@ The following six classification models were implemented and evaluated on the sa
 
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
 |--------------|----------|-----|-----------|--------|----------|-----|
-| Logistic Regression | | | | | | |
-| Decision Tree | | | | | | |
-| kNN | | | | | | |
-| Naive Bayes | | | | | | |
-| Random Forest (Ensemble) | | | | | | |
-| XGBoost (Ensemble) | | | | | | |
+| Logistic Regression | 0.982456 | 0.997024 | 0.976190 | 0.976190 | 0.976190 | 0.962302 |
+| Decision Tree | 0.938596 | 0.931548 | 0.926829 | 0.904762 | 0.915663 | 0.867553 |
+| kNN | 0.956140 | 0.982308 | 0.974359 | 0.904762 | 0.938272 | 0.905824 |
+| Naive Bayes | 0.921053 | 0.989087 | 0.923077 | 0.857143 | 0.888889 | 0.829162 |
+| Random Forest (Ensemble) | 0.964912 | 0.995370 | 1.000000 | 0.904762 | 0.950000 | 0.925820 |
+| XGBoost (Ensemble) | 0.973684 | 0.994048 | 1.000000 | 0.928571 | 0.962963 | 0.944155 |
 
 ### Observations on Model Performance
 
 | ML Model Name | Observation about Model Performance |
 |--------------|--------------------------------------|
-| Logistic Regression | |
-| Decision Tree | |
-| kNN | |
-| Naive Bayes | |
-| Random Forest (Ensemble) | |
-| XGBoost (Ensemble) | |
+| Logistic Regression | The model exhibits very high accuracy with nearly identical precision, recall, and F1 score, indicating highly balanced and reliable identification of malignant and benign breast cancer cases. |
+| Decision Tree | The model shows reasonably high precision but lower recall and MCC, suggesting some malignant cases are missed despite generally accurate predictions. |
+| kNN | The model achieves strong precision and AUC with slightly reduced recall, indicating accurate malignant predictions while overlooking a subset of positive cases. |
+| Naive Bayes | The model attains high AUC but noticeably lower recall and F1 score, implying effective class separation but weaker sensitivity in detecting malignant tumors. |
+| Random Forest (Ensemble) | The model records perfect precision with high accuracy but lower recall, indicating no false malignant predictions while failing to detect some actual malignant cases. |
+| XGBoost (Ensemble) | The model combines perfect precision with high recall and F1 score, reflecting confident and well-balanced detection of malignant and benign breast cancer instances. |
