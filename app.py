@@ -3,6 +3,7 @@ import joblib
 import pandas as pd
 import numpy as np
 from sklearn.metrics import (
+    classification_report,
     confusion_matrix,
     accuracy_score,
     roc_auc_score,
@@ -123,7 +124,7 @@ if submit:
 
             with st.container():
             
-                col1, col2 = st.columns(2, gap="large")
+                col1, col2, col3 = st.columns([1.5, 2, 2])
 
                 with col1:
                     st.subheader("Evaluation Metrics")
@@ -153,12 +154,11 @@ if submit:
                     )
 
                 with col2:
-
                     st.subheader("Confusion Matrix")
 
                     cm = confusion_matrix(y, y_pred)
 
-                    fig, ax = plt.subplots(figsize=(3, 2))
+                    fig, ax = plt.subplots(figsize=(6, 4))
                     sns.heatmap(
                         cm,
                         annot=True,
@@ -172,6 +172,14 @@ if submit:
                     ax.set_ylabel("Actual")
 
                     st.pyplot(fig)
+                
+                with col3:
+                    st.subheader("Classification Report")
+
+                    cr = classification_report(y, y_pred, output_dict=True)
+
+                    df = pd.DataFrame(cr).transpose()
+                    st.dataframe(df)
 
 if not st.session_state.submitted_successfully:
     
